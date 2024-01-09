@@ -12,9 +12,9 @@
   foreach($products as $i=>$product) {
     $total += $product['price'] * $product['quantity'];
     if ($product['type'] == 'fruit') {
-      $totalTax += $product['price'] * $product['quantity'] * 0.06;
+      $totalTax = $product['price'] * $product['quantity'] * 0.06;
     } else {
-      $totalTax += $product['price'] * $product['quantity'] * 0.21;
+      $totalTax = $product['price'] * $product['quantity'] * 0.21;
     };
   }
 
@@ -51,8 +51,6 @@
     }
   }
   
-
-
   $banana = new Product('banana', 6, 1, 'fruit');
   $apple = new Product('apple', 3, 1.5, 'fruit');
   $wine = new Product('wine', 2, 10, 'wine');
