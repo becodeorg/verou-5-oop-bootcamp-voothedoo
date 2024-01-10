@@ -16,13 +16,4 @@ class Student
     return $this->grade;
   }
 
-  public static function calculateAverage(Group $group)
-  {
-  $total = 0;
-  foreach($group as $student) {
-    return $student->name;
-  }
-  
-  }
-
 }
