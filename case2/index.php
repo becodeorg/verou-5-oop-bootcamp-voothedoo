@@ -1,36 +1,29 @@
-<?php
+<?php 
+  require './class.php';
+?>
 
-class Product
-  {
-    public $name;
-    public $quantity;
-    public $price;
-    public $type;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case 2</title>
+</head>
+<body>
+  <div class="wrapper">
+    <p> 
+      <strong>Total Price: </strong> &euro; <?= $totalPrice; ?>
+    </p>
+    <p>
+      <strong>Tax paid: </strong> &euro; <?= $totalTax;  ?>
+    </p>
+    <p>
+      <strong>Discounted price: </strong> &euro; <?= $totalDiscountedPrice  ?>
+    </p>
+    <p>
+      <strong>Tax after Discount: </strong> &euro; <?= number_format((float)$totalDiscountedTax, 2, '.', '');?>
+    </p>
+  </div>
+</body>
+</html>
 
-    public function __construct (string $name, int $quantity, float $price, string $type){
-      $this->name = $name;
-      $this->quantity = $quantity;
-      $this->price = $price;
-      $this->type = $type;
-    }
-
-    public function calculateTotalPrice() {
-      if($this->type == 'fruit') {
-        return $this->price * 0.5 * $this->quantity;
-      } else {
-        return $this->price * $this->quantity;
-      }
-    }
-
-    public function calculateTax(float $tax) {
-      return $this->price * $this->quantity * $tax;
-    }
-  }
-  
-  $banana = new Product('banana', 6, 1, 'fruit');
-  $apple = new Product('apple', 3, 1.5, 'fruit');
-  $wine = new Product('wine', 2, 10, 'wine');
-
-  echo 'Total Price: &euro;'. $banana->calculateTotalPrice() + $apple->calculateTotalPrice() + $wine->calculateTotalPrice();
-  echo '<br>';
-  echo 'Tax paid: &euro;' . $banana->calculateTax(0.06) + $apple->calculateTax(0.06) + $wine->calculateTax(0.21);
