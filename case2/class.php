@@ -43,8 +43,11 @@
   $wine = new Product('wine', 2, 10, 'wine');
 
   $totalPrice = $banana->calculateTotalPrice() + $apple->calculateTotalPrice() + $wine->calculateTotalPrice();
+
   $totalTax = $banana->calculateTax(0.06) + $apple->calculateTax(0.06) + $wine->calculateTax(0.21);
+
   $totalDiscountedPrice = $banana->addDiscount(0.5) + $apple->addDiscount(0.5) + $wine->calculateTotalPrice();
+
   $totalDiscountedTax = $banana->taxAfterDiscount(0.5, 0.06) + $apple->taxAfterDiscount(0.5, 0.06) + $wine->calculateTax(0.21);
 
 
