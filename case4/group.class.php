@@ -16,7 +16,7 @@ class Group
   {
   $total = 0;
   foreach($this->group as $student) {
-    $total += $student->getGrade();
+    $total += $student->grade;
   }
   return $total / count($this->group);
   }
