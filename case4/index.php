@@ -1,5 +1,5 @@
 <?php
-  require './group.class.php';
+  require './logic.php';
 ?>
 
 <!DOCTYPE html>
